@@ -1,6 +1,6 @@
 <?php
 
-namespace blog\Providers;
+namespace Blog\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'blog\Model' => 'blog\Policies\ModelPolicy',
+        'Blog\Model' => 'Blog\Policies\ModelPolicy',
     ];
 
     /**
