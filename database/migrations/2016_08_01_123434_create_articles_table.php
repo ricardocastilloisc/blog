@@ -14,6 +14,18 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->text('content');
+            $table->string('slug')->nullable();
+            $table->string('path');
+            $table->string('tags');
+            /*Esta parte es para poner las columnas que referenciamos*/
+            $table->integer('user_id')->unsigned(); //
+            $table->integer('category_id')->unsigned(); //
+            //hacemos las referencias
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
